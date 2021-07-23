@@ -1,4 +1,8 @@
+#!/usr/bin/env bash
+
 # - https://mywiki.wooledge.org/BashGuide/TestsAndConditionals
+
+cd "$(dirname "${BASH_SOURCE[0]}")"
 
 # - The NOT operator inverses the exit code of the command it is applied to
 #   - This is the "logical NOT" operator

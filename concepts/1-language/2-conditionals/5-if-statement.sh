@@ -7,7 +7,7 @@
 #   - Otherwise, the if-statement evaluates the next elif condition and/or evaluates the else branch
 successful_exit_code() {
     if false; then
-        printf '%s\n' 'then branch'
+        printf '%s\n' 'if branch'
     elif true; then
         printf '%s\n' 'elif branch'
     else

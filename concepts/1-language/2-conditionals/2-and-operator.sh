@@ -2,7 +2,7 @@
 
 # - https://mywiki.wooledge.org/BashGuide/TestsAndConditionals
 
-cd "$( dirname "${BASH_SOURCE[0]}" )"
+cd "$( dirname "${BASH_SOURCE[0]}")"
 
 # - The && operator performs the logical AND operation
 #   - The second command only executes if the first command exited with 0

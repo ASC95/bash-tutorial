@@ -1,3 +1,4 @@
+# Links
 - https://linuxize.com/post/using-the-ssh-config-file/ - `config` file syntax
 - https://www.ssh.com/ssh/config/ - more `config` file syntax
 - https://serversforhackers.com/c/ssh-tricks - `ssh` good tips
@@ -14,7 +15,7 @@ IdentityFile <path to .key file>
 ```
 ### Command
 ```
-$ ssh git@gitlab.com`
+$ ssh git@gitlab.com
 ```
 - `ssh` reads the `Host gitlab*` stanza and sees that it matches the provided host "gitlab.com", so it applies the corresponding configuration to the
   connection
@@ -62,7 +63,7 @@ $ git clone git@gitlab.com:test-search-head/source-code.git
 - Best pratice is it to set permission to 600 for all private/public key files
 # Files
 - The `config` file is by default expected to be located at `~/.ssh/config`
-- The extension to a private key file is irrelevant, but ".key" is a common convention
+- The extension to a private key file is irrelevant, but ".key" is a common convention, as is no extension
   - Likewise, the extension to a public key file is irrelevant, but ".pub" is a common convention
 # Syntax
 - I don't think any of the attributes are technically required

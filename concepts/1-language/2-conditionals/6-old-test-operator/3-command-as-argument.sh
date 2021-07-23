@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+# - These notes don't technically fit here but I only ever end up needing to read them before the next set of notes so I put this one here
+
 # - When a command is used as an argument to another command, the argument command is treated as a string!
 #   - This behavior is caused by the execution of the Bash parser. After Bash has evaluated quotes and performed all expansions, the last thing it
 #     does is execute the actual commands. Commands are executed from left to right, so the leftmost command WILL interpret everything to the right

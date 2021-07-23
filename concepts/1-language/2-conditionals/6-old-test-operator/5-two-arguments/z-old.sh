@@ -4,33 +4,22 @@
 # - https://tiswww.case.edu/php/chet/bash/bashref.html#Shell-Builtin-Commands - describes the "test" (i.e. "[") operator in detail
 # - https://tiswww.case.edu/php/chet/bash/bashref.html#Bash-Conditional-Expressions - Bash unary conditional operators
 
-cd "$( dirname "${BASH_SOURCE[0]}" )"
+cd "$( dirname "${BASH_SOURCE[0]}")"
 
 # - If two arguments are provided to the test operator:
 #   - If the first argument is ! (logical NOT), then [ evaluates to true if the second argument is null
 #   - If the first argument is a unary conditional operator, then [ evaluates to true if the unary test is true 
 two_arguments() {
-    [ !$not_set ]; echo "$?" # 0
+    # - $not_set expands to nothing (i.e. an empty string)
+    [ ! $not_set ]; echo "$?" # 0
     # - Return true if the file exists
     [ -a  'string-conditions.sh' ]; echo "$?" # 0
+
     [ -a  '1-exit-statuz.sh' ]; echo "$?" # 1
     # - Return true if the file exists and is a symbolic link
     [ -h  'string-conditions-symlink.sh' ]; echo "$?" # 1
     # - This is false because $my_var expands to 'foo', and the variable 'foo' is not set
     [ -v $my_var ]; echo "$?" # 1
-}
-
-# - "-v": true if the shell variable varname is set (has been assigned a value). 
-#   - It does not matter if the variable is null or not
-check_if_variable_is_set() {
-    # - "my_var" is set and is not null
-    my_var='foo'
-    [ -v my_var ]; echo "$?" # 0
-    # - "your_var" is set and is null
-    your_var=''
-    [ -v your_var ]; echo "$?" # 0
-    # - "dog" is not set at all
-    [ -v dog ]; echo "$?" # 1
 }
 
 # - "-R": true if the shell variable varname is set and is a name reference
@@ -45,6 +34,6 @@ check_if_variable_is_name_reference() {
     [ -R dish ]; echo $? # 1
 }
 
-#two_arguments
-check_if_variable_is_set
+two_arguments
+#check_if_variable_is_set
 #check_if_variable_is_name_reference
